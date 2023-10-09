@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="upper">
+        <div id="radio_btn">
+            <input type="radio" name="min_max" id="min" value="MIN" onchange="sort()"/>
+            <label for="MIN">MIN</label>
+            <input type="radio" name="min_max" id="max" value="MAX" onchange="sort()"/>
+            <label for="MAX">MAX</label>
+        </div>
+    </div>
+    <div id="left"></div>
+    <div id="left_d"></div>
+    <div id="result"></div>
+    <div id="bottom">
+        <div id="inputs">
+            <input type="text" id="przedmiot" placeholder="przedmiot"/>
+            <input type="text" id="ocena" placeholder="ocena"/>
+            <button onclick="insert_into()" id="button">INSERT INTO TABLE</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>
