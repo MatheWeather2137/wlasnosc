@@ -9,6 +9,7 @@ async function wyswietl(){
     document.getElementById("result").innerHTML = ""
 
     for(let i = 0; i <= json.length - 1; i++){
+        
         const div = document.createElement("div")
         div.classList.add("div")
         document.getElementById("result").appendChild(div)
@@ -21,9 +22,9 @@ async function wyswietl(){
         ocena.innerHTML = json[i].ocena
         div.appendChild(ocena)
     }
+    
 }
 wyswietl()
-
 
 
 async function insert_into(){
