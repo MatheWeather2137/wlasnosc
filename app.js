@@ -36,6 +36,9 @@ async function insert_into(){
     console.log(json)
     await wyswietl()
 }
+async function delete_from(){
+    
+}
 
 async function sort(){
     const radios = document.getElementsByName("min_max")

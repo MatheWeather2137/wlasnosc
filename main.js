@@ -34,6 +34,16 @@ app.get("/select_all",(req,res)=>{
         else res.send(result)
     })
 })
-
-
+app.get("/min_max/:value",(req,res)=>{
+    var value = req.params.value
+    if(value === "MAX"){
+        var sql = `SELECT * FROM tabela ORDER BY ocena DESC`
+    } else if(value === "MIN"){
+        var sql = `SELECT * FROM tabela ORDER BY ocena ASC`
+    }
+    con.query(sql,(err,result)=>{
+        if (err) console.log(err)
+        else res.send(result)
+    })
+})
 app.listen(port)
