@@ -46,4 +46,14 @@ app.get("/min_max/:value",(req,res)=>{
         else res.send(result)
     })
 })
+app.get("/delete",(req,res)=>{
+    const sql = `DELETE FROM tabela`
+
+    con.query(sql,(err,result)=>{
+        if(err) console.log(err)
+        else res.send(result)
+    })
+})
+
+
 app.listen(port)

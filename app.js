@@ -37,7 +37,10 @@ async function insert_into(){
     await wyswietl()
 }
 async function delete_from(){
-    
+    const data = await fetch(`${url}/delete`)
+    const json = await data.json()
+    console.log(json)
+    await wyswietl()
 }
 
 async function sort(){
