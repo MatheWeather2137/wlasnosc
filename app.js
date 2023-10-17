@@ -21,6 +21,11 @@ async function wyswietl(){
         const ocena = document.createElement("p")
         ocena.innerHTML = json[i].ocena
         div.appendChild(ocena)
+
+        const checkbox = document.createElement("input")
+        checkbox.type = "checkbox"
+        checkbox.name = "check"
+        div.appendChild(checkbox)
     }
     
 }
@@ -37,6 +42,13 @@ async function insert_into(){
     await wyswietl()
 }
 async function delete_from(){
+    const checkboxes = document.getElementsByName("check")
+    var value = ""
+    checkboxes.forEach((element)=>{
+        if(element.checked === true){
+            value = element.value
+        }
+    })
     const data = await fetch(`${url}/delete`)
     const json = await data.json()
     console.log(json)
