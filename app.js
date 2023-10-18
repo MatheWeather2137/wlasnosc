@@ -1,5 +1,5 @@
 const url = `http://localhost:3000`
-
+var licznik = 1
 async function wyswietl(){
     console.log("wyswietl")
     const data = await fetch(`${url}/select_all`)
@@ -24,8 +24,10 @@ async function wyswietl(){
 
         const checkbox = document.createElement("input")
         checkbox.type = "checkbox"
-        checkbox.name = "check"
+        checkbox.setAttribute("id",`${licznik}`)
         div.appendChild(checkbox)
+        licznik++
+        
     }
     
 }
@@ -42,13 +44,6 @@ async function insert_into(){
     await wyswietl()
 }
 async function delete_from(){
-    const checkboxes = document.getElementsByName("check")
-    var value = ""
-    checkboxes.forEach((element)=>{
-        if(element.checked === true){
-            value = element.value
-        }
-    })
     const data = await fetch(`${url}/delete`)
     const json = await data.json()
     console.log(json)
@@ -82,5 +77,10 @@ async function sort(){
         const ocena = document.createElement("p")
         ocena.innerHTML = json[i].ocena
         div.appendChild(ocena)
+        const checkbox = document.createElement("input")
+        checkbox.type = "checkbox"
+        checkbox.setAttribute("id",`${licznik}`)
+        div.appendChild(checkbox)
+        licznik++
     }
 }
